@@ -49,7 +49,7 @@
         
         <a href="http://draftback.com" target="_blank">
           <div style="text-align: center; margin:0 auto; margin-bottom: 20px">
-          	<img class="big-screenshot" src="https://cloud.githubusercontent.com/assets/21294/4896122/e7435f14-63f4-11e4-9706-831eb5adfb13.png"/>
+          	<img class="big-screenshot" src="https://cloud.githubusercontent.com/assets/21294/4896985/9f432084-6401-11e4-90db-96dc54cfe313.png"/>
           </div>
         </a>
         <p class="caption">A screenshot showing what it&#8217;s like to work with a document in <a href="http://draftback.com">Draftback</a>.</p>
@@ -241,7 +241,7 @@
         
         <p>We have two levels: paragraphs and spans. To figure out what to wrap in styles, we look at each character and say &#8220;what are your calculated styles&#8221; based on your hash of properties. Then we say &#8220;are those styles equal to the styles of the character before you?&#8221; If they are, we continue the span. If not, we create a new span.</p>
 
-        <p>And that&#8217;s essentially all you need to make somethig like Draftback.</p>
+        <p>And that&#8217;s essentially all you need to make something like Draftback.</p>
 
         <p><em>Except</em>, of course, the big key, which is that wouldn&#8217;t it be nice if you didn&#8217;t have to install a Chrome extension to capture these &#8220;/save&#8221; requests?</p>
 
@@ -265,7 +265,7 @@
 
         <iframe src="//player.vimeo.com/video/9848524" width="100%" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p class="caption"><a href="http://vimeo.com/9848524">Hack the planet</a> from <a href="http://vimeo.com/user2056851">James Somers</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-        <p>There are a couple of complications &#8212; one is that you can&#8217;t just say &#8220;load me revisions 1 to infinity&#8221; (or -1): you have to specify the actual upper bound. My first cut at this was to actually do a binary search &#8212; if you get a 500 response, you know you&#8217;ve gone too high, so reduce your upper bound; if you get a 200, you&#8217;re in range, so increase your lower bound; stop until lower > upper.</p>
+        <p>There are a couple of complications &#8212; one is that you can&#8217;t just say &#8220;load me revisions 1 to infinity&#8221; (or -1): you have to specify the actual upper bound. My first cut at this was to do a binary search &#8212; if you get a <code>500</code> response, you know you&#8217;ve gone too high, so reduce your upper bound; if you get a <code>200</code>, you&#8217;re in range, so increase your lower bound; stop until lower > upper.</p>
 
         <p>And, of course, there&#8217;s the matter of building a renderer that works at scale, including for documents that have many tens of thousands of revisions, where each revision is hundreds of pages long. (For that, the main trick is in calculating a &#8220;window&#8221; around the locus of each revision, and only doing your heavy-duty rendering within that window.) And making a UI that people want to use. And finding a way to hit these undocumented APIs on the behalf of other Google users without having them give you their credentials.</p>
 
