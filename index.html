@@ -1,1 +1,111 @@
-My GitHub Page
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8"></meta>
+    <link href="http://fonts.googleapis.com/css?family=Abril+Fatface|Open+Sans:300,400,600,700,800|Gentium+Book+Basic:400,400italic|Vollkorn:400italic,400" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:700|Playfair+Display:400,900,700italic|Oswald:700|PT+Mono' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,900&subset=latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <meta name="description" content="How James Somers reverse-engineered Google Docs to play back any document's keystrokes">
+    <link rel="shortcut icon" href="http://jsomers.net/favicon.ico" />
+    <link rel="alternate" type="application/rss+xml" 
+    		  title="RSS Feed for jsomers.net" 
+    		  href="http://jsomers.net/blog/feed" />
+          
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" media="(device-height: 568px)">
+
+    <meta name="apple-mobile-web-app-title" content="James Somers (jsomers.net)">
+    <title>How I reverse-engineered Google Docs to play back any document's keystrokes &laquo; James Somers (jsomers.net)</title>
+  </head>
+  
+  <body>
+    <div id="title">
+      <section class="text">
+        <h1><span>How I<br></span> Reverse Engineered <br> Google Docs <br> <span class="smaller">To Play Back Any Document&#8217;s Keystrokes</span></h1>
+        <h2><a href="http://jsomers.net">James Somers</a></h2>
+      </section>
+    </div>
+    
+    <div id="container">
+      <div class="time">November 4th, 2014</div>
+      
+      <div id="post">
+        <p>If you&#8217;ve ever typed anything into a Google Doc, you can now play it back as if it were a movie &#8212; like traveling through time to look over your own shoulder as you write.</p>
+
+        <p>This is possible because every document written in Google Docs since <a href="http://googledocs.blogspot.com/2010/05/whats-different-about-new-google-docs.html">about May 2010</a> has a revision history that tracks every change, by every user, with timestamps accurate to the microsecond; these histories are available to anyone with &#8220;Edit&#8221;
+ permissions; and I have written a piece of software that can find, decode, and rebuild the history for any given document.</p>
+
+        <hr/>
+        
+        <iframe width="100%" height="315" src="http://localhost:3000/embed/10" frameborder="0" allowfullscreen></iframe>
+
+        <p>See that little gizmo above? It&#8217;s like a video player, but specifically for writing. This one&#8217;s from an article I wrote a few weeks ago. The <a href="https://medium.com/backchannel/say-it-again-3a5bc7c0ec53">article</a> was about a wristband that records everything around you, but only ever saves stuff when you tap it. I had a lot to say about that, but there was one paragraph in particular that I was really happy with &#8212; in fact you could say that I pitched the story and reported it out just so that I could write that one graf. Above, you can see how it came to be.</p>
+
+        <p>What&#8217;s neat about this is that I didn&#8217;t have to use any special software while I was writing to produce this &#8220;video.&#8221; I was working in plain old Google Docs. And to show you this one paragraph I liked, I didn&#8217;t have to present you with the whole document (all 29,751 revisions of it) &#8212; I could extract bits and pieces that I thought were interesting, and interleave them in a blog post. Imagine what a high school English teacher could do with that. Imagine what you could do with that if instead of a minor effort by ol&#8217; Somers here you had, say, a piece by Ta-Nehisi Coates. (I&#8217;ve always wanted to watch how TNC writes. If he&#8217;s ever used Google Docs, it&#8217;s now possible.)</p>
+        
+        <a href="http://draftback.com" target="_blank">
+          <div style="text-align: center; margin:0 auto; margin-bottom: 20px">
+          	<img class="big-screenshot" src="https://cloud.githubusercontent.com/assets/21294/4878796/92b0cacc-6318-11e4-9c04-52b7d409355e.png"/>
+          </div>
+        </a>
+        
+        <p>To produce the embed, I used a website I made called <a href="http://draftback.com">draftback.com</a>, which I suppose I&#8217;m launching right now. With Draftback, you can play back and analyze any of your own Google Docs, or, for that matter, any Google Doc you have permission to edit.</p>
+
+        <p>(Everyone I&#8217;ve talked to about this has been surprised, and maybe a little unnerved, to discover that whenever they share a Google Doc with someone, they&#8217;re <em>also</em> sharing an extremely detailed record of them typing the thing.)</p>
+
+        <a href="https://cloud.githubusercontent.com/assets/21294/4883761/4361da54-6365-11e4-8b46-f67f4f9520b3.png">
+          <div style="text-align: center; margin:0 auto; margin-bottom: 20px">
+              <img class="graph" src="https://cloud.githubusercontent.com/assets/21294/4883761/4361da54-6365-11e4-8b46-f67f4f9520b3.png" />
+          </div>
+        </a>
+
+        <p>Here&#8217;s a graph that Draftback automatically produced, which shows the timeline of my changes to the wristband article, and below it, a &#8220;map&#8221; that tells me where in the document each of those revisions happened &#8212; the further down the graph, the further down the page. It looks like I made three or four passes, the first one focused on the top of the article, and slow; and the later ones faster and further down. A visual fingerprint of a document, and of a writer.</p>
+
+        <p>The data that Google stores is, as you might expect, kind of incredible. What we actually have is not just a coarse &#8220;video&#8221; of a document &#8212; we have the complete history of every single character. Draftback is aware of this history, and assigns each character a persistent unique ID, which makes it possible to do stuff that I don&#8217;t think folks have really done to a piece of writing before.</p>
+        
+        <a href="http://jsomers.net/draftback.gif">
+          <div style="text-align: center; margin:0 auto; margin-bottom: 20px">
+          	<img src="http://i.imgur.com/KRSaHEa.gif"/>
+          </div>
+        </a>
+        
+        <p>Here, for instance, you can see me typing a short document. Focus on the first paragraph: you&#8217;ll see that it wasn&#8217;t written in one contiguous swoop, but rather was cobbled together over time via a bunch of discontinuous edits: I edit the paragraph, then do other stuff, then I come back to the paragraph, and so on. I even cut and paste a phrase from one paragraph to another.</p>
+
+        <p>Since Draftback has the full history for every character, and since that history is maintained even when characters are cut and pasted (Draftback knows when these are the same characters), it&#8217;s possible to select some text and see exactly where it came from. It&#8217;s like having a four-dimensional view of a piece of writing.</p>
+        <hr/>
+        <h3>To what end?</h3>
+        
+        <p>I&#8217;ve long been obsessed by what you might call the &#8220;archaeology&#8221; of writing: how something like John McPhee&#8217;s profile of Bill Bradley (<a href="http://www.newyorker.com/magazine/1965/01/23/a-sense-of-where-you-are">&#8220;A Sense of Where You Are&#8221;</a>), or T. S. Eliot&#8217;s <a href="http://lit.genius.com/Ts-eliot-the-waste-land-annotated">&#8220;The Waste Land&#8221;</a>, comes to be.</p>
+
+        <p>I&#8217;ll read stuff about it: <a href="http://muse.jhu.edu/journals/mod/summary/v012/12.1rainey.html">&#8220;Eliot Among the Typists&#8221;</a> is a fascinating paper; the <a href="http://books.google.com/books?id=8C0OoG5e12AC&amp;printsec=frontcover&amp;dq=the+john+mcphee+reader&amp;hl=en&amp;sa=X&amp;ei=a2n1U-7AIPLKsQT2kIHwCw&amp;ved=0CB4Q6AEwAA#v=onepage&amp;q=introduction&amp;f=false">introduction</a> to <a href="http://www.amazon.com/The-John-McPhee-Reader/dp/0374517193"><em>The John McPhee Reader</em></a> is good, as are McPhee&#8217;s own essays on writing, <a href="http://www.newyorker.com/magazine/2013/01/14/structure">&#8220;Structure&#8221;</a> and <a href="http://jsomers.net/mcphee-draft-no-4.pdf">&#8220;Draft No. 4&#8221;</a>. I liked McP&#8217;s <a href="http://www.theparisreview.org/interviews/5997/the-art-of-nonfiction-no-3-john-mcphee">interview</a> in The Paris Review, whose <a href="http://www.theparisreview.org/interviews">long-running series</a> is legendary, especially <a href="http://www.theparisreview.org/interviews/4825/the-art-of-fiction-no-21-ernest-hemingway">this one with Hemingway</a>, which is one of the best things I&#8217;ve read.</p>
+
+        <p>But what if you could actually <em>see</em> these guys at work? Isn&#8217;t it a shame you can&#8217;t?</p>
+
+        <p>I think it is, and not just for weirdo fans like myself. Most people aren&#8217;t as good writers as they should be. One thing is that they just <a href="http://jsomers.net/blog/more-people-should-write">don&#8217;t write enough</a>. Another is that they don&#8217;t realize it&#8217;s <a href="http://www.theatlantic.com/technology/archive/2011/07/composition-101-how-email-can-change-the-way-professors-teach/242468/">supposed to be hard</a>; they think that good writers are talented, when the truth is that good writers get good the way good programmers get good, the way good anythings get good, by enduring pain. And I think they&#8217;d understand that better if they had vivid evidence that a very good writer actually spends most of his time fighting himself.</p>
+
+        <p>That&#8217;s why I built Draftback. I had a vision: get someone whose writing is accessible, concise, uncontroversial, well-styled, and, above all, quintessentially <em>writing</em>: i.e., someone who&#8217;s writing in a form where the writing is all there is, where the job isn&#8217;t to report but rather to put into words what we would think if only we had their critical equipment and verbal range&#8230; someone like A.O. Scott, who reviews movies for the New York Times and does such a good job of it that sometimes I&#8217;ll watch a movie just so I can read his review.</p>
+
+        <p>So you get A.O. Scott to write in Google Docs, and you publish the full playback and excerpted bits and pieces of it, the greatest hits &#8212; annotated, of course, director&#8217;s-commentary style &#8212; for every fan, every aspiring writer, and every high school English teacher in the country.</p>
+
+        <p>Whaddya say, Tony?</p>
+        
+        <hr>
+        <h3>Getting More Technical: From Etherpad to Jimbopad to Google Docs</h3>
+
+        <p>It all started 5 years ago on Hacker News with this oddly exuberant post by Paul Graham himself: <a href="https://news.ycombinator.com/item?id=495336">&#8220;The most surprising thing I&#8217;ve seen in 2009, courtesy of Etherpad&#8221;</a>. PG got famous because of his essays, and here he&#8217;s saying that he wrote one of his famous essays in a program that recorded every keystroke. In effect you could watch PG write, backspaces and all. This was a sensation. At the time, it was one of the biggest hacker news stories ever.</p>
+
+        <p><a href="https://code.stypi.com/hacks/13sentences">Here&#8217;s what it looked like</a>. (This is actually a later version; the original, at etherpad.com, was taken down when Etherpad was bought by Google. More on that later.) All it is is a document with a slider at the top and a big play button, showing every revision. You can play the whole history of the thing start to finish. Pretttty simple.</p>
+
+        <p>I remember seeing this playback and thinking that it could be better. I wanted more information: when did PG pause, and for how long? How much, exactly, did he delete? How did that compare against other writers? What if I saw a sentence I really liked &#8212; could I trace it to its source?</p>
+
+        <p>So I decided to build a thing I called JimboPad. I was surprised at how simple JimboPad turned out to be. You don&#8217;t actually need that much code to play back a record of someone writing. All you need is a textarea and some way of tracking diffs. <a href="http://jsomers.net/jimbopad/">Here&#8217;s what the playback UI was like</a>, and here&#8217;s the JavaScript that made it possible (click on the highlighted bits of code for annotations):</p>
+
+        <div id='rg_embed_link_565954' class='rg_embed_link'>Read <a href="http://tech.genius.com/James-somers-code-sample-for-embed-annotated">“Code sample for embed” by James Somers</a> on Genius</div><script src='//tech.genius.com/songs/565954/embed.js?u=150586'></script>
+
+        <p>Simple as it is, this was actually better for my purposes than Etherpad. The problem with Etherpad is that in order to power its playback feature, it actually stored a full snapshot of the document at every tick. So if you had a 1MB text file &#8212; say, you&#8217;re working on <a href="theatlantic.com/magazine/archive/2013/11/the-man-who-would-teach-machines-to-think/309529/">a 7,500-word article</a> &#8212; every keystroke would dump another meg on disk. Jimbopad, which was purpose-built for playback &#8212; I didn&#8217;t have to worry about real-time collaboration, which was Etherpad&#8217;s raison d&#8217;être and big value proposition &#8212; just stored &#8220;deltas&#8221; between each revision, which led to about a 1,000x decrease in required storage.</p>
+
+      </div>
+    </div>
+  </body>
+</html>
