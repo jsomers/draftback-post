@@ -391,3 +391,16 @@ pre {
   margin-top: -20px !important;
   padding-bottom: 0px !important;
 }
+
+.rg_embed .rg_embed_body a {
+  color: inherit !important;
+}
+
+.rg_embed .rg_embed_header a, .rg_embed .rg_embed_footer a {
+  font-family: 'merriweather';
+  color: rgb(68, 68, 68);
+}
+
+.rg_embed .rg_embed_header a {
+  line-height: 20px; 
+}
