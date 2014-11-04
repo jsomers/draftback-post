@@ -1,6 +1,14 @@
 @media only screen 
 			and (min-device-width : 320px) 
 			and (max-device-width : 568px) {
+        
+  #contactme {
+    display: none;
+  }
+  
+  #mailme {
+    display: inline !important;
+  }
 	#container {
 		width: 100% !important;
 	}
@@ -45,7 +53,7 @@
     max-width: 100% !important;
   }
   
-  img.big-screenshot, img.graph {
+  img.big-screenshot, img.graph, img.inspector-1, img.changelog {
     position: inherit !important;
   }
   
@@ -122,8 +130,11 @@ h2 a {
   top: -10px;
 }
 
-#container p {
+#container p, #container li {
   font: 400 17px/28px "merriweather";
+}
+
+#container p {
   margin-bottom: 1.5em;
 }
 
@@ -161,6 +172,21 @@ img.graph {
   margin: 0 auto;
 }
 
+img.bordered {
+  padding: 10px;
+  border: 1px solid #eee;
+}
+
+img.inspector-1 {
+  position: relative;
+  left: -33px;
+}
+
+img.changelog {
+  position: relative;
+  left: -118px;
+}
+
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -174,7 +200,14 @@ hr {
 
 h3 {
   color: #222;
-  font: 800 20px/20px "open sans";
+  font: 800 20px/27px "open sans";
+}
+
+code {
+  font-family: 'Inconsolata';
+/*  color: #FF5700;*/
+  color: #848484;
+  font-size: 19px;
 }
 
 pre {
@@ -404,4 +437,32 @@ pre {
 
 .rg_embed .rg_embed_header a {
   line-height: 20px !important;
+}
+
+blockquote {
+  color: #333;
+  font: 400 18px/26px "vollkorn";
+  font-style: italic;
+  margin: 0 0 10px 0;
+  margin-left: 50px;
+}
+
+blockquote p {
+  color: #c90707;
+  font: 400 12px "vollkorn";
+  text-transform: uppercase;
+  margin-top: 0px;
+}
+
+#post blockquote p a {
+  color: #c90707;
+  font: 400 12px/18px "vollkorn";
+}
+
+.meta-bottom p {
+  font: 400 12px/20px "merriweather" !important;
+}
+
+.meta-bottom h3 {
+  font: 800 16px/23px "open sans";
 }

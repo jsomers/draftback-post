@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <meta name="description" content="How James Somers reverse-engineered Google Docs to play back any document's keystrokes">
     <link rel="shortcut icon" href="http://jsomers.net/favicon.ico" />
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5458727d16a5b612"></script>
     <link rel="alternate" type="application/rss+xml" 
     		  title="RSS Feed for jsomers.net" 
     		  href="http://jsomers.net/blog/feed" />
@@ -40,7 +41,7 @@
         
         <iframe width="100%" height="315" src="http://localhost:3000/embed/10" frameborder="0" allowfullscreen></iframe>
 
-        <p>See that little gizmo above? It&#8217;s like a video player, but specifically for writing. This one&#8217;s from an article I wrote a few weeks ago. The <a href="https://medium.com/backchannel/say-it-again-3a5bc7c0ec53">article</a> was about a wristband that records everything around you, but only ever saves stuff when you tap it. I had a lot to say about that, but there was one paragraph in particular that I was really happy with &#8212; in fact you could say that I pitched the story and reported it out just so that I could write that one graf. Above, you can see how it came to be.</p>
+        <p>See that little gizmo above? It&#8217;s like a video player, but made for writing. This one&#8217;s from an article I wrote a few weeks ago. The <a href="https://medium.com/backchannel/say-it-again-3a5bc7c0ec53">article</a> was about a wristband that records everything around you, but only ever saves stuff when you tap it. I had a lot to say about that, but there was one paragraph in particular that I was really happy with &#8212; in fact you could say that I pitched the story and reported it out just so that I could write that one graf. Above, you can see how it came to be.</p>
 
         <p>What&#8217;s neat about this is that I didn&#8217;t have to use any special software while I was writing to produce this &#8220;video.&#8221; I was working in plain old Google Docs. And to show you this one paragraph I liked, I didn&#8217;t have to present you with the whole document (all 29,751 revisions of it) &#8212; I could extract bits and pieces that I thought were interesting, and interleave them in a blog post. Imagine what a high school English teacher could do with that. Imagine what you could do with that if instead of a minor effort by ol&#8217; Somers here you had, say, a piece by Ta-Nehisi Coates. (I&#8217;ve always wanted to watch how TNC writes. If he&#8217;s ever used Google Docs, it&#8217;s now possible.)</p>
         
@@ -56,7 +57,7 @@
 
         <a href="https://cloud.githubusercontent.com/assets/21294/4883761/4361da54-6365-11e4-8b46-f67f4f9520b3.png">
           <div style="text-align: center; margin:0 auto; margin-bottom: 20px">
-              <img class="graph" src="https://cloud.githubusercontent.com/assets/21294/4883761/4361da54-6365-11e4-8b46-f67f4f9520b3.png" />
+              <img class="graph bordered" src="https://cloud.githubusercontent.com/assets/21294/4883761/4361da54-6365-11e4-8b46-f67f4f9520b3.png" />
           </div>
         </a>
 
@@ -66,7 +67,7 @@
         
         <a href="http://jsomers.net/draftback.gif">
           <div style="text-align: center; margin:0 auto; margin-bottom: 20px">
-          	<img src="http://i.imgur.com/KRSaHEa.gif"/>
+          	<img class="bordered" src="http://i.imgur.com/KRSaHEa.gif"/>
           </div>
         </a>
         
@@ -84,14 +85,14 @@
 
         <p>I think it is, and not just for weirdo fans like myself. Most people aren&#8217;t as good writers as they should be. One thing is that they just <a href="http://jsomers.net/blog/more-people-should-write">don&#8217;t write enough</a>. Another is that they don&#8217;t realize it&#8217;s <a href="http://www.theatlantic.com/technology/archive/2011/07/composition-101-how-email-can-change-the-way-professors-teach/242468/">supposed to be hard</a>; they think that good writers are talented, when the truth is that good writers get good the way good programmers get good, the way good anythings get good, by enduring pain. And I think they&#8217;d understand that better if they had vivid evidence that a very good writer actually spends most of his time fighting himself.</p>
 
-        <p>That&#8217;s why I built Draftback. I had a vision: get someone whose writing is accessible, concise, uncontroversial, well-styled, and, above all, quintessentially <em>writing</em>: i.e., someone who&#8217;s writing in a form where the writing is all there is, where the job isn&#8217;t to report but rather to put into words what we would think if only we had their critical equipment and verbal range&#8230; someone like A.O. Scott, who reviews movies for the New York Times and does such a good job of it that sometimes I&#8217;ll watch a movie just so I can read his review.</p>
+        <p>That&#8217;s why I built Draftback. I had this idea I just couldn&#8217;t shake: get someone whose writing is accessible, concise, uncontroversial, well-styled, and, above all, quintessentially <em>writing:</em> i.e., someone who&#8217;s writing in a form where the writing is all there is, where the job isn&#8217;t to report but rather to put into words what we would think if only we had their critical equipment and verbal range&#8230; someone like A.O. Scott, who reviews movies for the New York Times and does such a good job of it that sometimes I&#8217;ll watch a movie just so I can read his review.</p>
 
         <p>So you get A.O. Scott to write in Google Docs, and you publish the full playback and excerpted bits and pieces of it, the greatest hits &#8212; annotated, of course, director&#8217;s-commentary style &#8212; for every fan, every aspiring writer, and every high school English teacher in the country.</p>
 
         <p>Whaddya say, Tony?</p>
         
         <hr>
-        <h3>Getting More Technical: From Etherpad to Jimbopad to Google Docs</h3>
+        <h3>The Technical Origin Story: From Etherpad to Jimbopad to Google Docs</h3>
 
         <p>It all started 5 years ago on Hacker News with this oddly exuberant post by Paul Graham himself: <a href="https://news.ycombinator.com/item?id=495336">&#8220;The most surprising thing I&#8217;ve seen in 2009, courtesy of Etherpad&#8221;</a>. PG got famous because of his essays, and here he&#8217;s saying that he wrote one of his famous essays in a program that recorded every keystroke. In effect you could watch PG write, backspaces and all. This was a sensation. At the time, it was one of the biggest hacker news stories ever.</p>
 
@@ -105,6 +106,215 @@
 
         <p>Simple as it is, this was actually better for my purposes than Etherpad. The problem with Etherpad is that in order to power its playback feature, it actually stored a full snapshot of the document at every tick. So if you had a 1MB text file &#8212; say, you&#8217;re working on <a href="theatlantic.com/magazine/archive/2013/11/the-man-who-would-teach-machines-to-think/309529/">a 7,500-word article</a> &#8212; every keystroke would dump another meg on disk. Jimbopad, which was purpose-built for playback &#8212; I didn&#8217;t have to worry about real-time collaboration, which was Etherpad&#8217;s raison d&#8217;être and big value proposition &#8212; just stored &#8220;deltas&#8221; between each revision, which led to about a 1,000x decrease in required storage.</p>
 
+        <blockquote>This is why if you were to do “version control” for writing, you would have to record everything. You would have to make it trivial for the writer to “branch” off from some articulation, fail, and fall back to what they had before. Their every half-overture would have to be saved—because every half-overture, like every “commit,” might have words they would want to get back to. <p>— <a href="http://jsomers.net/blog/jimbopad">jsomers.net/blog/jimbopad</a></p>
+        </blockquote>
+
+        <p>As soon as I made jimboPad, which was the simplest this program could possibly be, I wanted something better. That&#8217;s when I set out to build Draftback 1.0. Here&#8217;s an example:</p>
+
+        <p><a href="http://jimbopad.herokuapp.com/drafts/1/underlining/playback">http://jimbopad.herokuapp.com/drafts/1/underlining/playback</a></p>
+
+        <p>As far as I can tell this was the state of the art in writing playback. You&#8217;ve got your slider, of course. But you&#8217;ve also got these nifty green and red colors that show you exactly what changed in each revision. You&#8217;re automatically scrolled to the part of the document that changed (HUGE innovation). And you could drop in to &#8220;actual-speed&#8221; playback mode, which somehow I thought was far more intimate, and interesting, than watching a ceaseless robotic clack. (It had a feature where if the delay between revisions was long enough, a thing would come up and say &#8220;the writer stared into space for 30 minutes&#8221; or whatever.) You could even search phrases and filter to just the revisions including that phrase.</p>
+
+        <p>But there were still a bunch of problems. The &#8220;search&#8221; filter was really naive: all it did was look for all revisions whose full rendered text included the phrase, and filtered out everything else. That&#8217;s useful, but what I was really looking for was the &#8220;origin story&#8221; of a phrase or sentence; I wanted to know where the <em>parts</em> of the sentence, before it was the atomic unit I&#8217;m seeing now, came from. That just wasn&#8217;t even possible using the diff-match-patch approach.</p>
+
+        <p>Maybe the bigger problem was that no good writer was going to use this program. Up to this point, my &#8220;editor&#8221; had been a simple textarea, and I was requiring that you write in Markdown. And eventually I got this mantra in my head: &#8220;AO Scott is never gonna use markdown&#8221;, &#8220;AO Scott is never gonna use markdown.&#8221;</p>
+
+        <p>I was convinced you needed a beautiful clean WYSIWYG editor to get people to use your writing software.</p>
+
+        <p>I looked at a lot of options, and ultimately I paid for a thing called <a href="http://imperavi.com/redactor/docs/api/">Redactor</a>. That&#8217;s right: in my desperation I actually <em>bought</em> my RTF technology. I paid like $200 for a Javascript file.</p>
+
+        <p>Redactor was actually a good editor, it had this great big API, it was really easy to hack on, but still it ultimately used <code>content-editable</code>, and <code>content-editable</code> ends up breaking a lot. Here are a couple of TODOs and notes from my time working on that editor:</p>
+
+        <ul>
+          <li>The WYSYWIG control buttons sometimes don&#8217;t reflect state. Toggles don&#8217;t toggle properly.</li>
+          <li>Why does hitting &#8220;I&#8221; italicize so much text?</li>
+          <li>Does un-blockquoting something not return you to normal formatting?</li>
+        </ul>
+
+        <p>So that was a problem.</p>
+        
+        <hr>
+        <h3>The § That Actually Finally Delivers What the Title Promised: An explanation of how to reverse-engineer Google Docs&#8217;s diff data structures and renderer, a system which was actually probably developed for real-time collaboration, a.k.a &#8220;Operational Transformation,&#8221;
+ a.k.a. nothing to do with &#8220;the archaeology of writing&#8221;</h3>
+
+        <p>The slam dunk in my face was <a href="http://googledocs.blogspot.com/2010/05/whats-different-about-new-google-docs.html">this blog post by Google</a> in which they explained why they scrapped the <code>content-editable</code> approach for Docs and build a brand new rendering engine from scratch.</p>
+
+        <p>When you&#8217;re using Google Docs, you&#8217;re not actually typing into where you think you&#8217;re typing. You&#8217;re typing into a textarea in an iFrame off-screen, and through the postMessage API, those events are being sent to the &#8220;edit surface&#8221; that you see, which does stuff like draw your cursor. (Your cursor on Docs isn&#8217;t actually a cursor, it&#8217;s a 2px-wide <code>div</code>!)</p>
+
+        <p>I took this as proof not just that I was never going to be able to build a good word processor with <code>content-editable</code>, but that Google were the only ones who had the gall, and technical wherewithal, to do the insane gymnastics required to build something that felt like Word in the browser. I figured if I couldn&#8217;t beat them, I&#8217;d join them: I&#8217;d write a jimboPad-like plugin or extension for Docs.</p>
+
+        <hr/>
+
+        <p>I started by trying to build an actual <a href="https://developers.google.com/apps-script/quickstart/docs">plugin</a> for Docs. I played with their sample code, I looked through the documentation. I was trying to see if there was a hook I could get that would tell me when a user changed the document. Because recall that all I really need is a hook, a diff-match-patch library, and a place to store the deltas, and that would be enough.</p>
+
+        <pre>   &#8220;The onEdit trigger runs automatically when a user changes the value of
+    any cell in a *spreadsheet*&#8221;</pre>
+
+        <p>It turns out that they don&#8217;t expose this kind of event for their docs. And that&#8217;s when things started getting pretty interesting.</p>
+
+        <p>I decide I&#8217;m just going to write a Chrome extension on top of Google Docs, and I&#8217;m gonna capture the rendered HTML every time I make a change. Sure, the user has to install a Chrome extension, but that&#8217;s pretty simple, and when they&#8217;re using Docs they&#8217;ll hardly notice that my extension is there. It&#8217;ll feel like a seamless transparent experience.</p>
+        
+        <a href="https://cloud.githubusercontent.com/assets/21294/4884191/3da89c34-6369-11e4-9cbe-c5e03695ae4d.png">
+          <div style="text-align: center; margin:0 auto; margin-bottom: 20px">
+          	<img class="bordered inspector-1" src="https://cloud.githubusercontent.com/assets/21294/4884191/3da89c34-6369-11e4-9cbe-c5e03695ae4d.png"/>
+          </div>
+        </a>
+        
+        <p>So what I did was I looked in the web inspector and found the DOM I cared about. I found out that all the actual content has these classes like <code>kix-page</code> and <code>kix-lineview</code> and <code>kix-wordhtmlgenerator-word-node</code>. (Google&#8217;s codename for their Docs edit surface and rendering engine is &#8220;Kix.&#8221;) I figured that I could do something like this in a Chrome extension:</p>
+
+
+        <div id='rg_embed_link_566001' class='rg_embed_link'>Read <a href="http://tech.genius.com/James-somers-chrome-extension-to-capture-google-docs-revisions-annotated">“Chrome extension to capture Google Docs revisions” by James Somers</a> on Genius</div><script src='//tech.genius.com/songs/566001/embed.js?u=150586'></script>
+
+        <p>I thought I was pretty clever, but while testing this code, I discovered that sometimes it would miss big chunks of my document. I found out that Google renders pages on demand: if you load a 99-page document, although it might <em>look</em> like you can scroll all the way down, right away, the actual text on those later pages won&#8217;t be generated until you scroll it into view.</p>
+
+        <p>At this point I did something kinda dumb. I tried to reverse-engineer the client-side editor code so that I could find whatever the render function was. I figured if I could find <em>some</em> hook, I could trick the editor into thinking I&#8217;d scrolled through the whole document. That way my diff-match-patch tool would be working with the full document at each revision.</p>
+
+        <p>My thought was that if the Docs editor/rendering code was all Javascript, I must be able to figure out how it works, even if it was 80,000 lines of code that looked like this:</p>
+
+
+        <div id='rg_embed_link_566012' class='rg_embed_link'>Read <a href="http://tech.genius.com/James-somers-obfuscated-kix-renderer-code-annotated">“Obfuscated Kix renderer code” by James Somers</a> on Genius</div><script src='//tech.genius.com/songs/566012/embed.js?u=150586'></script>
+
+        <p>I tried to do this by throwing breakpoints all over the place. I&#8217;d search for phrases in the code that weren&#8217;t obfuscaed, like <code>innerHTML</code>, and throw a breakpoint beside them. Then I&#8217;d do stuff in the UI, and see if I hit my breakpoint. Then I&#8217;d inspect the call stack and see what values were lying around. I found out stuff like if you type something like <code>P.j.zb.rx()</code> in the console, and run it, you&#8217;ll &#8220;redo&#8221; whatever your last action was. I spend days doing this. In fact, on one weekend I spent so much time staring at minified Docs Javascript that I literally developed an eye ulcer. </p>
+
+        <p>Have you ever heard the story of how while NASA spent years and tens of millions of dollars developing a pen that would write in space, underwater, and upside-down, the Russians just brought a pencil? It&#8217;s apparently not true (the space pen <em>was</em> much safer than a pencil, and Russians wanted one too) but it illustrates a point. Here&#8217;s the &#8220;Russians bring a pencil&#8221; solution to my rendering problem. Again, click the highlighted lines to see an annotation that explains what&#8217;s going on:</p>
+
+
+        <div id='rg_embed_link_566016' class='rg_embed_link'>Read <a href="http://tech.genius.com/James-somers-the-russians-brought-a-pencil-solution-annotated">“The "Russians Brought a Pencil" Solution” by James Somers</a> on Genius</div><script src='//tech.genius.com/songs/566016/embed.js?u=150586'></script>
+
+        <p>Needless to say, I wasn&#8217;t really happy with this solution. And I had seen something curious while getting my eye ulcer. At one point I&#8217;d clicked away from the &#8220;Sources&#8221; tab in the Chrome inspector and started looking at the &#8220;Network&#8221; tab. And I noticed these &#8220;/save&#8221; calls every time I typed something:</p>
+
+        <a href="https://cloud.githubusercontent.com/assets/21294/4884332/ba8f6a60-636a-11e4-8a1e-a2b4872e86c0.png">
+          <div style="text-align: center; margin:0 auto; margin-bottom: 20px">
+          	<img class="bordered" src="https://cloud.githubusercontent.com/assets/21294/4884332/ba8f6a60-636a-11e4-8a1e-a2b4872e86c0.png"/>
+          </div>
+        </a>
+        
+        <p>The payload looked pretty juicy. Here, for instance, I&#8217;m typing a period at the end of a sentence early in the document:</p>
+        
+        <a href="https://cloud.githubusercontent.com/assets/21294/4884351/f1a9d4ea-636a-11e4-99a1-195a8354306d.png">
+          <div style="text-align: center; margin:0 auto; margin-bottom: 20px">
+          	<img class="bordered" src="https://cloud.githubusercontent.com/assets/21294/4884351/f1a9d4ea-636a-11e4-99a1-195a8354306d.png"/>
+          </div>
+        </a>
+        
+        <p>That seems parseable enough: a &#8220;command&#8221; of type (<code>ty</code>) insert (<code>is</code>) where the &#8220;insert begin index&#8221; (<code>ibi</code>) is 24 and the string (<code>s</code>) is &#8220;.&#8221;. Now we&#8217;re cooking with gas.</p>
+
+        <p>At this point, I figured my Chrome extension could be pretty dumb. All I had to do was intercept these &#8220;save&#8221; requests and store them somewhere. Later, I could figure out how to use them to rebuild the document. As long as someone had my extension installed from the very start of their editing, and never made any change in a browser <em>without</em> the extension, I should have enough to do everything Docs could do. (I reasoned that Docs gets exactly no more data about a document than what is sent to the server via these &#8220;save&#8221; calls; so those <em>must</em> be enough to render everything.)</p>
+
+        <p>Here&#8217;s what I cooked up:</p>
+
+        <div id='rg_embed_link_566022' class='rg_embed_link'>Read <a href="http://tech.genius.com/James-somers-chrome-extension-redux-this-time-with-request-captures-annotated">“Chrome Extension Redux, This Time With Request Captures” by James Somers</a> on Genius</div><script src='//tech.genius.com/songs/566022/embed.js?u=150586'></script>
+
+        <p>This gave me a bunch of commands that looked like this:</p>
+
+        <div id='rg_embed_link_566026' class='rg_embed_link'>Read <a href="http://tech.genius.com/James-somers-google-docs-data-structure-annotated">“Google Docs Data Structure” by James Somers</a> on Genius</div><script src='//tech.genius.com/songs/566026/embed.js?u=150586'></script>
+
+        <p>These didn&#8217;t seem so hard to figure out. You have what looks like a &#8220;multi&#8221; or bundle operation, and then inside of it, a list of other operations: some inserts and some deletes. For inserts, you have the string you&#8217;re adding; for deletes, the indexes that tell you what to remove. I built myself a debugging tool that would let me step through a list of these revisions, to see both a rendered document and a dump of the critical <code>characters</code> array I was using to represent it under the hood:</p>
+
+        <a href="https://cloud.githubusercontent.com/assets/21294/4884411/911de89a-636b-11e4-8184-1f28eba9f5ee.png">
+          <div style="text-align: center; margin:0 auto; margin-bottom: 20px">
+          	<img class="bordered" src="https://cloud.githubusercontent.com/assets/21294/4884411/911de89a-636b-11e4-8184-1f28eba9f5ee.png"/>
+          </div>
+        </a>
+        
+        <p>The data is so simple that it almost suggests the implementation of the builder and renderer. You have a <code>characters</code> array, and you insert and remove characters from it. When you format text, you&#8217;re just passing a hash of options to a range of characters. The whole of my document builder looks like this, in outline. The main thing it&#8217;s doing, really, is giving intelligible names to a bunch of variables:</p>
+
+        <div id='rg_embed_link_566032' class='rg_embed_link'>Read <a href="http://tech.genius.com/James-somers-basic-renderer-annotated">“Basic Renderer” by James Somers</a> on Genius</div><script src='//tech.genius.com/songs/566032/embed.js?u=150586'></script>
+        
+        <p>The renderer is also pretty simple. (For bigger documents, for now, I don&#8217;t render styles, because it&#8217;s a lot of extra work for not that much better of a user experience.) It works like this:</p>
+
+        <div id='rg_embed_link_566037' class='rg_embed_link'>Read <a href="http://tech.genius.com/James-somers-basic-renderer-code-annotated">“Basic Renderer Code” by James Somers</a> on Genius</div><script src='//tech.genius.com/songs/566037/embed.js?u=150586'></script>
+        
+        <p>We have two levels: paragraphs and spans. To figure out what to wrap in styles, we look at each character and say &#8220;what are your calculated styles&#8221; based on your hash of properties. Then we say &#8220;are those styles equal to the styles of the character before you?&#8221; If they are, we continue the span. If not, we create a new span.</p>
+
+        <p>And that&#8217;s essentially all you need to make somethig like Draftback.</p>
+
+        <p><em>Except</em>, of course, the big key, which is that wouldn&#8217;t it be nice if you didn&#8217;t have to install a Chrome extension to capture these &#8220;/save&#8221; requests?</p>
+
+        <p>I was talking to my <a href="http://genius.com/lemon">boss</a> at <a href="http://genius.com">work</a> about this, and he suggested I look at the standard &#8220;Revision History&#8221; menu in Docs &#8212; maybe they had all the diffs somewhere in there?</p>
+
+        <p>I thought he must be wrong, since I remembered that Google only ever rendered a fairly coarse set of changes: maybe dozens or at most a hundred revisions for a document that had probably been changed 10 or 100 times more than that. But I indulged the idea, and started poking around the Network tab while poking through the Revision History menu. It&#8217;s then that I chanced upon the <code>/load</code> call. It has a URL that looks like this:</p>
+
+        <p><code>https://docs.google.com/document/d/#{docid}/revisions/load?id=#{docid}&amp;start=1330&amp;end=1341</code></p>
+
+        <p>And it returns something that looks like this:</p>
+        
+        <a href="https://cloud.githubusercontent.com/assets/21294/4884576/0abb5d1c-636d-11e4-8464-06c16020ed3b.png">
+          <div style="text-align: center; margin:0 auto; margin-bottom: 20px">
+          	<img class="changelog bordered" src="https://cloud.githubusercontent.com/assets/21294/4884576/0abb5d1c-636d-11e4-8464-06c16020ed3b.png"/>
+          </div>
+        </a>
+        
+        <p>Hmm, I wonder what happens when you change the <code>start</code> and <code>end</code> parameters to cover a wider range? Will you, by chance, get the entire revision history for the document?</p>
+
+        <p>I think yes.</p>
+
+        <iframe src="//player.vimeo.com/video/9848524" width="500" height="213" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/9848524">Hack the planet</a> from <a href="http://vimeo.com/user2056851">James Somers</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+        <p>There are a couple of complications &#8212; one is that you can&#8217;t just say &#8220;load me revisions 1 to infinity&#8221; (or -1): you have to specify the actual upper bound. My first cut at this was to actually do a binary search &#8212; if you get a 500 response, you know you&#8217;ve gone too high, so reduce your upper bound; if you get a 200, you&#8217;re in range, so increase your lower bound; stop until lower > upper.</p>
+
+        <p>And, of course, there&#8217;s the matter of building a renderer that works at scale, including for documents that have many tens of thousands of revisions, where each revision is hundreds of pages long. (For that, the main trick is in calculating a &#8220;window&#8221; around the locus of each revision, and only doing your heavy-duty rendering within that window.) And making a UI that people want to use. And finding a way to hit these undocumented APIs on the behalf of other Google users without having them give you their credentials.</p>
+
+        <h3>A historical note</h3>
+
+        <p>It&#8217;s worth noting for a second that Google probably wasn&#8217;t thinking of playback when they built this system for storing documents as a series of minute changes. They probably did it for the same reason that Etherpad did it, which is to power real-time collaboration. The only way you can do that quickly and reliably is by shooting small changes back and forth across the network; if two changes differ, you can just reject one of them, thereby ensuring that everyone has the same version of the document. This is a technique called <a href="http://en.wikipedia.org/wiki/Operational_transformation">operational transformation</a>, and it&#8217;s a whole science unto itself.</p>
+
+        <p>So it&#8217;s not likely that Google is going to change the way they save documents just because it enables this playback stuff. The playback is an epiphenomenon of real-time collaboration, as it was with Etherpad. Etherpad made the Paul Graham demo at Paul Graham&#8217;s request; it was easy, since they were storing all this data anyway &#8212; because they had to. In fact, I think it&#8217;s possible that the very same engineers who built Etherpad found their way to the Docs team. (When they were acquired, they started at Wave, but then, of course, Wave was discontinued.)</p>
+
+        <h3>A few notes about Draftback</h3>
+
+        <p>In the spirit of <a href="http://firstround.com/article/rap-genius-explains-why-worse-is-better">&#8220;worse is better,&#8221;</a> the software at <a href="http://draftback.com">draftback.com</a> is about as simple as I could bear releasing, and it might not do well under heavy load. I hope people find it useful. You probably could use it to look at the revision history of documents where you really have no business doing so &#8212; documents, for instance, shared with you by folks who didn&#8217;t know you&#8217;d be able to see their revision history. Don&#8217;t do that, obviously.</p>
+        
+        <p>Aside from that, well, I&#8217;m just excited this thing finally exists.</p>
+
+        <div class="meta-bottom">
+          <h3>Who are you?</h3>
+          
+          <p itemscope itemtype="http://data-vocabulary.org/Person">
+            <span itemprop="name">James Somers</span> is a <span itemprop="title">writer and programmer</span> based in <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+              <span itemprop="locality">New York</span>, 
+              <span itemprop="region">NY</span>. He works on the engineering team at <a href="http://genius.com" itemprop="url">Genius.com</a>.
+            </span> Follow <a href="http://twitter.com/jsomers">@jsomers</a> for updates. Or <span id="contactme">contact me directly at <script type="text/javascript">
+          //<![CDATA[
+          <!--
+          var x="function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
+          "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
+          " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!63{)rt{y+xx=l;=+;" +
+          "lc}tahce({)}}of(r=i-l;1>i0=i;--{)+ox=c.ahAr(t)i};erutnro s.buts(r,0lo;)f}\\" +
+          "\"(1),2\\\"\\\\`jgt!o)$$g'.#(03\\\\01\\\\%3FRM[04\\\\0r\\\\\\\\\\\\OJUGmI3i" +
+          "uh77\\\\1t\\\\tmqy\\\"\\\\f(;} ornture;}))++(y)^(iAtdeCoarchx.e(odrChamCro." +
+          "fngriSt+=;o27=1y%i;+=)y21==(iif){++;i<l;i=0(ior;fthnglex.l=\\\\,\\\\\\\"=\\" +
+          "\",o iar{vy)x,f(n ioctun\\\"f)\")"                                           ;
+          while(x=eval(x));
+          //-->
+          //]]>
+          </script></span> <span id="mailme" style="display: none;"><script type="text/javascript">
+          //<![CDATA[
+          <!--
+          var x="function f(x){var i,o=\"\",ol=x.length,l=ol;while(x.charCodeAt(l/13)!" +
+          "=57){try{x+=x;l+=l;}catch(e){}}for(i=l-1;i>=0;i--){o+=x.charAt(i);}return o" +
+          ".substr(0,ol);}f(\")9,\\\"]U_J@_100\\\\pb$0/9<*>2u1>r%3.:##(tk420\\\\e230\\" +
+          "\\x!/6(4730\\\\430\\\\aQTY720\\\\T^WXSsACUBA^F120\\\\E]DNGH600\\\\771\\\\73" +
+          "0\\\\GEmv=}'81v{sa}ae?dak`yhem\\\"(f};o nruter};))++y(^)i(tAedoCrahc.x(edoC" +
+          "rahCmorf.gnirtS=+o;721=%y{)++i;l<i;0=i(rof;htgnel.x=l,\\\"\\\"=o,i rav{)y,x" +
+          "(f noitcnuf\")"                                                              ;
+          while(x=eval(x));
+          //-->
+          //]]>
+          </script></span></p>
+          
+          <h3>Acknowledgements</h3>
+
+          <p>All errors, omissions, and lapses in judgement in the above are my own. The following people might not have known exactly how they were helping me or what with; they were just being their generous selves.</p>
+
+          <p>I&#8217;d like to thank Jim for talking through diffs and nodes with me at length, and for explaining exactly the approach that it turned out Google uses, long before I discovered it. And Tom, for looking at what I thought was a pretty good demo and saying &#8220;well wouldn&#8217;t it be better if you could do this for <em>existing</em> documents,&#8221; and then coming up with a <a href="http://meta.genius.com/4127111">practical suggestion</a> for where to look. And finally to John, for letting me battle-test my code against his enormous, beautifully written book chapter.</p>
+          
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5458727d16a5b612" async="async"></script>
+          
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          <div class="addthis_native_toolbox"></div>
+        </div>
       </div>
     </div>
   </body>
