@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <meta name="description" content="How James Somers reverse-engineered Google Docs to play back any document's keystrokes">
     <link rel="shortcut icon" href="http://jsomers.net/favicon.ico" />
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="gif-player.js"></script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5458727d16a5b612"></script>
     <link rel="alternate" type="application/rss+xml" 
     		  title="RSS Feed for jsomers.net" 
@@ -39,17 +41,18 @@
 
         <hr/>
         
-        <iframe width="100%" height="315" src="http://localhost:3000/embed/10" frameborder="0" allowfullscreen></iframe>
+        <iframe width="100%" height="315" src="//draftback.com/embed/2" frameborder="0" allowfullscreen></iframe>
 
-        <p>See that little gizmo above? It&#8217;s like a video player, but made for writing. This one&#8217;s from an article I wrote a few weeks ago. The <a href="https://medium.com/backchannel/say-it-again-3a5bc7c0ec53">article</a> was about a wristband that records everything around you, but only ever saves stuff when you tap it. I had a lot to say about that, but there was one paragraph in particular that I was really happy with &#8212; in fact you could say that I pitched the story and reported it out just so that I could write that one graf. Above, you can see how it came to be.</p>
+        <p>See that little gizmo above? It&#8217;s like a video player, but made especially for writing. This one&#8217;s from an Atlantic article I began work on nearly four years ago, on the day after Christmas in 2010. The <a href="http://www.theatlantic.com/technology/archive/2011/01/why-learning-to-fly-or-code-is-easier-than-you-think/69324/">article</a> was about the first (and only) time I got to fly a small airplane. I had fun writing it, but I figured that like most of the things I&#8217;ve written, the actual details of the composition were lost to time. But since I happened to write this one in Google Docs, I can recover every keystroke. Above, you can see the first uncertain stirrings of the first paragraph.</p>
 
-        <p>What&#8217;s neat about this is that I didn&#8217;t have to use any special software while I was writing to produce this &#8220;video.&#8221; I was working in plain old Google Docs. And to show you this one paragraph I liked, I didn&#8217;t have to present you with the whole document (all 29,751 revisions of it) &#8212; I could extract bits and pieces that I thought were interesting, and interleave them in a blog post. Imagine what a high school English teacher could do with that. Imagine what you could do with that if instead of a minor effort by ol&#8217; Somers here you had, say, a piece by Ta-Nehisi Coates. (I&#8217;ve always wanted to watch how TNC writes. If he&#8217;s ever used Google Docs, it&#8217;s now possible.)</p>
+        <p>What&#8217;s neat about this is that I didn&#8217;t have to use any special software while I was writing to produce this &#8220;video.&#8221; I was working in plain old vanilla Google Docs. And to show you this one paragraph I liked, I didn&#8217;t have to present you with the whole document (all 39,154 revisions of it) &#8212; I could extract bits and pieces that I thought were interesting, and interleave them in a blog post. Imagine what a high school English teacher could do with that. Imagine what you could do with that if instead of a minor effort by ol&#8217; Somers here you had, say, a piece by Ta-Nehisi Coates. (I&#8217;ve always wanted to watch how TNC writes. If he&#8217;s ever used Google Docs, it&#8217;s now possible.)</p>
         
         <a href="http://draftback.com" target="_blank">
           <div style="text-align: center; margin:0 auto; margin-bottom: 20px">
-          	<img class="big-screenshot" src="https://cloud.githubusercontent.com/assets/21294/4878796/92b0cacc-6318-11e4-9c04-52b7d409355e.png"/>
+          	<img class="big-screenshot" src="https://cloud.githubusercontent.com/assets/21294/4896122/e7435f14-63f4-11e4-9706-831eb5adfb13.png"/>
           </div>
         </a>
+        <p class="caption">A screenshot showing what it&#8217;s like to work with a document in <a href="http://draftback.com">Draftback</a>.</p>
         
         <p>To produce the embed, I used a website I made called <a href="http://draftback.com">draftback.com</a>, which I suppose I&#8217;m launching right now. With Draftback, you can play back and analyze any of your own Google Docs, or, for that matter, any Google Doc you have permission to edit.</p>
 
@@ -60,16 +63,27 @@
               <img class="graph bordered" src="https://cloud.githubusercontent.com/assets/21294/4883761/4361da54-6365-11e4-8b46-f67f4f9520b3.png" />
           </div>
         </a>
+        <p class="caption">A map of changes to a document over time.</p>
 
-        <p>Here&#8217;s a graph that Draftback automatically produced, which shows the timeline of my changes to the wristband article, and below it, a &#8220;map&#8221; that tells me where in the document each of those revisions happened &#8212; the further down the graph, the further down the page. It looks like I made three or four passes, the first one focused on the top of the article, and slow; and the later ones faster and further down. A visual fingerprint of a document, and of a writer.</p>
+        <p>Here&#8217;s a graph that Draftback automatically produced for an article I was working on a few weeks ago. It shows the timeline of my changes, and below it, a &#8220;map&#8221; that tells me where in the document each of those revisions happened: the further down the graph, the further down the page. It looks like I made three or four passes, the first one focused on the top of the article, and slow; and the later ones faster and further down. A visual fingerprint of a document, and of a writer.</p>
 
         <p>The data that Google stores is, as you might expect, kind of incredible. What we actually have is not just a coarse &#8220;video&#8221; of a document &#8212; we have the complete history of every single character. Draftback is aware of this history, and assigns each character a persistent unique ID, which makes it possible to do stuff that I don&#8217;t think folks have really done to a piece of writing before.</p>
         
-        <a href="http://jsomers.net/draftback.gif">
-          <div style="text-align: center; margin:0 auto; margin-bottom: 20px">
-          	<img class="bordered" src="http://i.imgur.com/KRSaHEa.gif"/>
-          </div>
-        </a>
+      	<script type="text/javascript">
+      		$(document).ready( function(){
+      			$('.gif-player').each(function(){
+      				var self = $(this);
+      				this.gp = new gifPlayer(self, { autoplay: false });
+      			});
+      		});
+      	</script>
+        
+        <div class=gif-player style="text-align: center; margin:0 auto; margin-bottom: 20px;">
+        	<img class="bordered gif-still gif-ctrl gif-ctrl-p" src="https://cloud.githubusercontent.com/assets/21294/4896412/9d387422-63f9-11e4-888d-7f4d0d27f543.png">
+        	<img class="bordered gif-movie"	gif="http://i.imgur.com/KRSaHEa.gif">
+        </div>
+
+        <p class="caption">This animation shows how knowing every character&#8217;s history can help you trace the origins of the text you highlight.</p>
         
         <p>Here, for instance, you can see me typing a short document. Focus on the first paragraph: you&#8217;ll see that it wasn&#8217;t written in one contiguous swoop, but rather was cobbled together over time via a bunch of discontinuous edits: I edit the paragraph, then do other stuff, then I come back to the paragraph, and so on. I even cut and paste a phrase from one paragraph to another.</p>
 
@@ -115,7 +129,7 @@
 
         <p>As far as I can tell this was the state of the art in writing playback. You&#8217;ve got your slider, of course. But you&#8217;ve also got these nifty green and red colors that show you exactly what changed in each revision. You&#8217;re automatically scrolled to the part of the document that changed (HUGE innovation). And you could drop in to &#8220;actual-speed&#8221; playback mode, which somehow I thought was far more intimate, and interesting, than watching a ceaseless robotic clack. (It had a feature where if the delay between revisions was long enough, a thing would come up and say &#8220;the writer stared into space for 30 minutes&#8221; or whatever.) You could even search phrases and filter to just the revisions including that phrase.</p>
 
-        <p>But there were still a bunch of problems. The &#8220;search&#8221; filter was really naive: all it did was look for all revisions whose full rendered text included the phrase, and filtered out everything else. That&#8217;s useful, but what I was really looking for was the &#8220;origin story&#8221; of a phrase or sentence; I wanted to know where the <em>parts</em> of the sentence, before it was the atomic unit I&#8217;m seeing now, came from. That just wasn&#8217;t even possible using the diff-match-patch approach.</p>
+        <p>But there were still a bunch of problems. The &#8220;search&#8221; filter was really naïve: all it did was look for all revisions whose full rendered text included the phrase, and filtered out everything else. That&#8217;s useful, but what I was really looking for was the &#8220;origin story&#8221; of a phrase or sentence; I wanted to know where the <em>parts</em> of the sentence, before it was the atomic unit I&#8217;m seeing now, came from. That just wasn&#8217;t even possible using the diff-match-patch approach.</p>
 
         <p>Maybe the bigger problem was that no good writer was going to use this program. Up to this point, my &#8220;editor&#8221; had been a simple textarea, and I was requiring that you write in Markdown. And eventually I got this mantra in my head: &#8220;AO Scott is never gonna use markdown&#8221;, &#8220;AO Scott is never gonna use markdown.&#8221;</p>
 
@@ -249,7 +263,7 @@
 
         <p>I think yes.</p>
 
-        <iframe src="//player.vimeo.com/video/9848524" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/9848524">Hack the planet</a> from <a href="http://vimeo.com/user2056851">James Somers</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+        <iframe src="//player.vimeo.com/video/9848524" width="100%" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p class="caption"><a href="http://vimeo.com/9848524">Hack the planet</a> from <a href="http://vimeo.com/user2056851">James Somers</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
         <p>There are a couple of complications &#8212; one is that you can&#8217;t just say &#8220;load me revisions 1 to infinity&#8221; (or -1): you have to specify the actual upper bound. My first cut at this was to actually do a binary search &#8212; if you get a 500 response, you know you&#8217;ve gone too high, so reduce your upper bound; if you get a 200, you&#8217;re in range, so increase your lower bound; stop until lower > upper.</p>
 
@@ -265,7 +279,9 @@
 
         <p>In the spirit of <a href="http://firstround.com/article/rap-genius-explains-why-worse-is-better">&#8220;worse is better,&#8221;</a> the software at <a href="http://draftback.com">draftback.com</a> is about as simple as I could bear releasing, and it might not do well under heavy load. I hope people find it useful. You probably could use it to look at the revision history of documents where you really have no business doing so &#8212; documents, for instance, shared with you by folks who didn&#8217;t know you&#8217;d be able to see their revision history. Don&#8217;t do that, obviously.</p>
         
-        <p>Aside from that, well, I&#8217;m just excited this thing finally exists.</p>
+        <p>Aside from that, well, I&#8217;m just excited that this thing finally exists.</p>
+        
+        <hr>
 
         <div class="meta-bottom">
           <h3>Who are you?</h3>
@@ -303,11 +319,54 @@
           //]]>
           </script></span></p>
           
+          <p>If you&#8217;d like to read more, check out <a href="http://jsomers.net/blog">jsomers.net/blog</a> or the list on my <a href="http://jsomers.net">homepage</a>. You can also subscribe for email updates below:</p>
+          
+          <script type="text/javascript">
+          $(document).ready(function() {
+            $("#email-signup-form").submit(function() {
+              var emailval = $('input#email').val();
+
+          if ($.trim(emailval) !== "") {
+            $("input[name='subscribe']").replaceWith("<img src='/ajax-loader.gif'/>")
+            $.ajax({
+              url: 'http://jsomers.net/email_signup.php', // your url; on jsfiddle /echo/json/
+              type: 'POST', // request method
+              data: {
+                email: emailval,
+                b_1c70e701f700d17d3a360885e_642d8f1db8: $('input[name="b_1c70e701f700d17d3a360885e_642d8f1db8"]').val()
+              },
+              success: function(data) {
+                $("#email_signup").replaceWith('<h4 style="margin-top: 20px; color: green;">' + data + '</h4>');
+              }
+            });
+          } else {
+              alert("Insert a email!");
+          }
+            return false;
+            });
+          });
+          </script>
+          
+          <div id="email_signup">
+            <form action="http://jsomers.net/email_signup.php" method="post" id="email-signup-form" name="email-signup-form" class="validate" target="_blank" novalidate style="padding-left: 0px; padding-bottom: 0px;">
+              <input type="email" value="" name="email" class="email" id="email" placeholder="Enter your email address for updates" style="border: 2px solid #eee; padding: 5px; display: inline; margin-right: 0px; font-size: 13px; width: 250px;" required>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;"><input type="text" name="b_1c70e701f700d17d3a360885e_642d8f1db8" value=""></div>
+              <input type="submit" value="Sign up" name="subscribe" class="button" style="display: inline">
+            </form>
+          </div>
+          
+          <div id="mobile_email_signup">
+            <a href="mailto:%6A%73%6F%6D%65%72%73@%67%6D%61%69%6C.%63%6f%6d?body=Hit%20send%20to%20get%20updates%20on%20my%20writing.&amp;subject=[jsomers.net%20mail%20subscription]%20I%27m%20in%21">Get my writing by email</a>
+          </div>
+          
           <h3>Acknowledgements</h3>
 
           <p>All errors, omissions, and lapses in judgement in the above are my own. The following people might not have known exactly how they were helping me or what with; they were just being their generous selves.</p>
 
           <p>I&#8217;d like to thank Jim for talking through diffs and nodes with me at length, and for explaining exactly the approach that it turned out Google uses, long before I discovered it. And Tom, for looking at what I thought was a pretty good demo and saying &#8220;well wouldn&#8217;t it be better if you could do this for <em>existing</em> documents,&#8221; and then coming up with a <a href="http://meta.genius.com/4127111">practical suggestion</a> for where to look. And finally to John, for letting me battle-test my code against his enormous, beautifully written book chapter.</p>
+          
+          <h3>Share this article</h3>
           
           <!-- Go to www.addthis.com/dashboard to customize your tools -->
           <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5458727d16a5b612" async="async"></script>

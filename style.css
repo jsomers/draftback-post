@@ -12,6 +12,12 @@
 	#container {
 		width: 100% !important;
 	}
+  #email_signup {
+    display: none;
+  }
+  #mobile_email_signup {
+    display: block !important;
+  }
   
   section.text {
     width: 100% !important;
@@ -45,7 +51,7 @@
     font: 800 14px/14px "open sans" !important;
   }
   
-  #container p {
+  #container p, #container li {
     font: 400 14px/22px "merriweather" !important;
   }
   
@@ -134,6 +140,10 @@ h2 a {
   font: 400 17px/28px "merriweather";
 }
 
+#container p.caption {
+  font: 400 13px/20px "merriweather";
+}
+
 #container p {
   margin-bottom: 1.5em;
 }
@@ -185,6 +195,10 @@ img.inspector-1 {
 img.changelog {
   position: relative;
   left: -118px;
+}
+
+img.gif-still {
+  cursor: pointer;
 }
 
 hr {
@@ -463,10 +477,17 @@ blockquote p {
   font: 400 12px/18px "vollkorn";
 }
 
+.meta-bottom {
+  margin-bottom: 100px;
+}
+
 .meta-bottom p {
   font: 400 12px/20px "merriweather" !important;
 }
 
 .meta-bottom h3 {
   font: 800 16px/23px "open sans";
+}
+#mobile_email_signup {
+  display: none;
 }
