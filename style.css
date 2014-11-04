@@ -420,6 +420,10 @@ pre {
   background-color: #EAF2F5
 }
 
+.rg_embed {
+  width: 100%;
+}
+
 .rg_embed .rg_embed_body {
   padding-top: 0px !important;
   margin-top: -20px !important;
