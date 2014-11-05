@@ -204,7 +204,7 @@
 
         <div id='rg_embed_link_566016' class='rg_embed_link'>Read <a href="http://tech.genius.com/James-somers-the-russians-brought-a-pencil-solution-annotated">“The "Russians Brought a Pencil" Solution” by James Somers</a> on Genius</div><script src='//tech.genius.com/songs/566016/embed.js?u=150586'></script>
 
-        <p>Needless to say, I wasn&#8217;t really happy with this solution. And I had seen something curious while getting my eye ulcer. At one point I&#8217;d clicked away from the &#8220;Sources&#8221; tab in the Chrome inspector and started looking at the &#8220;Network&#8221; tab. And I noticed these &#8220;/save&#8221; calls every time I typed something:</p>
+        <p>Needless to say, I wasn&#8217;t really happy with this solution. And I had seen something curious while getting my eye ulcer. At one point I&#8217;d clicked away from the &#8220;Sources&#8221; tab in the Chrome inspector and started looking at the &#8220;Network&#8221; tab. And I noticed these <code>/save</code> calls every time I typed something:</p>
 
         <a href="https://cloud.githubusercontent.com/assets/21294/4884332/ba8f6a60-636a-11e4-8a1e-a2b4872e86c0.png" target="_blank">
           <div style="text-align: center; margin:0 auto; margin-bottom: 20px">
@@ -222,7 +222,7 @@
         
         <p>That seems parseable enough: a &#8220;command&#8221; of type (<code>ty</code>) insert (<code>is</code>) where the &#8220;insert begin index&#8221; (<code>ibi</code>) is 24 and the string (<code>s</code>) is &#8220;.&#8221;. Now we&#8217;re cooking with gas.</p>
 
-        <p>At this point, I figured my Chrome extension could be pretty dumb. All I had to do was intercept these &#8220;save&#8221; requests and store them somewhere. Later, I could figure out how to use them to rebuild the document. As long as someone had my extension installed from the very start of their editing, and never made any change in a browser <em>without</em> the extension, I should have enough to do everything Docs could do. (I reasoned that Docs gets exactly no more data about a document than what is sent to the server via these &#8220;save&#8221; calls; so those <em>must</em> be enough to render everything.)</p>
+        <p>At this point, I figured my Chrome extension could be pretty dumb. All I had to do was intercept these &#8220;save&#8221; requests and store them somewhere. Later, I could figure out how to use them to rebuild the document. As long as someone had my extension installed from the very start of their editing, and never made any change in a browser <em>without</em> the extension, I should have enough to do everything Docs could do. (I reasoned that Docs gets exactly no more data about a document than what is sent to the server via these <code>save</code> calls; so those <em>must</em> be enough to render everything.)</p>
 
         <p>Here&#8217;s what I cooked up:</p>
 
