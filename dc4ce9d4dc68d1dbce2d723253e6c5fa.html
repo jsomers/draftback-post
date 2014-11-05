@@ -125,7 +125,7 @@
 
         <p>I remember seeing this playback and thinking that it could be better. I wanted more information: when did pg pause, and for how long? How much, exactly, did he delete? How did that compare against other writers? What if I saw a sentence I really liked &#8212; could I trace it to its source?</p>
 
-        <p>So I decided to build a thing I called JimboPad. I was surprised at how simple JimboPad turned out to be. You don&#8217;t actually need that much code to play back a record of someone writing. All you need is a textarea and some way of tracking diffs. <a href="http://jsomers.net/jimbopad/" target="_blank">Here&#8217;s what the playback UI was like</a>, and here&#8217;s the JavaScript that made it possible (click on the highlighted bits of code for annotations):</p>
+        <p>So I decided to build a thing I called Jimbopad. I was surprised at how simple Jimbopad turned out to be. You don&#8217;t actually need that much code to play back a record of someone writing. All you need is a textarea and some way of tracking diffs. <a href="http://jsomers.net/jimbopad/" target="_blank">Here&#8217;s what the playback UI was like</a>, and here&#8217;s the JavaScript that made it possible (click on the highlighted bits of code for annotations):</p>
 
         <div id='rg_embed_link_565954' class='rg_embed_link'>Read <a href="http://tech.genius.com/James-somers-code-sample-for-embed-annotated">“Code sample for embed” by James Somers</a> on Genius</div><script src='//tech.genius.com/songs/565954/embed.js?u=150586'></script>
 
@@ -134,21 +134,21 @@
         <blockquote>This is why if you were to do “version control” for writing, you would have to record everything. You would have to make it trivial for the writer to “branch” off from some articulation, fail, and fall back to what they had before. Their every half-overture would have to be saved—because every half-overture, like every “commit,” might have words they would want to get back to. <p>— <a href="http://jsomers.net/blog/jimbopad" target="_blank">jsomers.net/blog/jimbopad</a></p>
         </blockquote>
 
-        <p>As soon as I made jimboPad, which was the simplest this program could possibly be, I wanted something better. That&#8217;s when I set out to build Draftback 1.0. Here&#8217;s an example:</p>
+        <p>As soon as I made Jimbopad, which was the simplest this program could possibly be, I wanted something better. That&#8217;s when I set out to build Draftback 1.0. Here&#8217;s what it looked like:</p>
 
         <p><a href="http://jimbopad.herokuapp.com/drafts/1/underlining/playback" target="_blank">http://jimbopad.herokuapp.com/drafts/1/underlining/playback</a></p>
 
-        <p>As far as I can tell this was the state of the art in writing playback. You&#8217;ve got your slider, of course. But you&#8217;ve also got these nifty green and red colors that show you exactly what changed in each revision. You&#8217;re automatically scrolled to the part of the document that changed (HUGE innovation). And you could drop in to &#8220;actual-speed&#8221; playback mode, which somehow I thought was far more intimate, and interesting, than watching a ceaseless robotic clack. (It had a feature where if the delay between revisions was long enough, a thing would come up and say &#8220;the writer stared into space for 30 minutes&#8221; or whatever.) You could even search phrases and filter to just the revisions including that phrase.</p>
+        <p>As far as I can tell this was the state of the art in writing playback. You&#8217;ve got your slider, of course. But you&#8217;ve also got these nifty green and red colors that show you exactly what changed in each revision. You&#8217;re automatically scrolled to the part of the document that changed (HUGE innovation). And you could drop in to &#8220;actual-speed&#8221; playback mode, which somehow I thought was far more intimate, and interesting, than watching a ceaseless robotic clack. (It had a feature where if the delay between revisions was long enough, a thing would come up and say &#8220;the writer stared into space for 30 minutes.&#8221;) You could even search phrases and filter to just the revisions including that phrase.</p>
 
-        <p>But there were still a bunch of problems. The &#8220;search&#8221; filter was really naïve: all it did was look for all revisions whose full rendered text included the phrase, and filtered out everything else. That&#8217;s useful, but what I was really looking for was the &#8220;origin story&#8221; of a phrase or sentence; I wanted to know where the <em>parts</em> of the sentence, before it was the atomic unit I&#8217;m seeing now, came from. That just wasn&#8217;t even possible using the diff-match-patch approach.</p>
+        <p>But there were still a bunch of problems. The &#8220;search&#8221; filter was really naïve: all it did was look for revisions whose full rendered text included the phrase, and it filtered out everything else. That&#8217;s useful, but what I was really looking for was the &#8220;genealogy&#8221; of a phrase or sentence; I wanted to know where the <em>parts</em> of the sentence, before it was the atomic unit I&#8217;m seeing now, came from. That just wasn&#8217;t even possible using the diff-match-patch approach.</p>
 
-        <p>Maybe the bigger problem was that no good writer was going to use this program. Up to this point, my &#8220;editor&#8221; had been a simple textarea, and I was requiring that you write in Markdown. And eventually I got this mantra in my head: &#8220;AO Scott is never gonna use markdown&#8221;, &#8220;AO Scott is never gonna use markdown.&#8221;</p>
+        <p>Maybe the bigger problem was that no good writer was going to use this program. Up to this point, my &#8220;editor&#8221; had been a simple textarea, and it required that you write in Markdown. And eventually I got this mantra in my head: &#8220;A.O. Scott is never gonna use markdown&#8221;, &#8220;A.O. Scott is never gonna use markdown.&#8221;</p>
 
         <p>I was convinced you needed a beautiful clean WYSIWYG editor to get people to use your writing software.</p>
 
         <p>I looked at a lot of options, and ultimately I paid for a thing called <a href="http://imperavi.com/redactor/docs/api/" target="_blank">Redactor</a>. That&#8217;s right: in my desperation I actually <em>bought</em> my RTF technology. I paid like $200 for a Javascript file.</p>
 
-        <p>Redactor was actually a good editor, it had this great big API, it was really easy to hack on, but still it ultimately used <code>content-editable</code>, and <code>content-editable</code> ends up breaking a lot. Here are a couple of TODOs and notes from my time working on that editor:</p>
+        <p>Redactor was actually a good editor, it had this great big API, it was really easy to hack on, but still it ultimately used <code>contentEditable</code>, and <code>contentEditable</code> ends up breaking a lot. Here are a couple of TODOs and notes from my time working on that editor:</p>
 
         <ul>
           <li>The WYSYWIG control buttons sometimes don&#8217;t reflect state. Toggles don&#8217;t toggle properly.</li>
@@ -162,15 +162,13 @@
         <h3>The § That Actually Finally Delivers What the Title Promised: An explanation of how to reverse-engineer Google Docs&#8217;s diff data structures and renderer, a system which was actually probably developed for real-time collaboration, a.k.a &#8220;Operational Transformation,&#8221;
  a.k.a. nothing to do with &#8220;the archaeology of writing&#8221;</h3>
 
-        <p>The slam dunk in my face was <a href="http://googledocs.blogspot.com/2010/05/whats-different-about-new-google-docs.html" target="_blank">this blog post by Google</a> in which they explained why they scrapped the <code>content-editable</code> approach for Docs and built a brand new rendering engine from scratch.</p>
+        <p>The slam dunk in my face was <a href="http://googledocs.blogspot.com/2010/05/whats-different-about-new-google-docs.html" target="_blank">this blog post by Google</a> in which they explained why they scrapped the <code>contentEditable</code> approach for Docs, and in its stead built a brand new rendering engine from scratch.</p>
 
         <p>When you&#8217;re using Google Docs, you&#8217;re not actually typing into where you think you&#8217;re typing. You&#8217;re typing into a textarea in an iFrame off-screen, and through the postMessage API, those events are being sent to the &#8220;edit surface&#8221; that you see, which does stuff like draw your cursor. (Your cursor on Docs isn&#8217;t actually a cursor, it&#8217;s a 2px-wide <code>div</code>!)</p>
 
-        <p>I took this as proof not just that I was never going to be able to build a good word processor with <code>content-editable</code>, but that Google were the only ones who had the gall, and technical wherewithal, to do the insane gymnastics required to build something that felt like Word in the browser. I figured if I couldn&#8217;t beat them, I&#8217;d join them: I&#8217;d write a jimboPad-like plugin or extension for Docs.</p>
+        <p>I took this as proof not just that <code>contentEditable</code> was doomed, but that Google were the only ones who had the gall, and technical wherewithal, to do the insane gymnastics required to build something that felt like Word in the browser. I figured if I couldn&#8217;t beat them, I&#8217;d join them.</p>
 
-        <hr/>
-
-        <p>I started by trying to build an actual <a href="https://developers.google.com/apps-script/quickstart/docs" target="_blank">plugin</a> for Docs. I played with their sample code, I looked through the documentation. I was trying to see if there was a hook I could get that would tell me when a user changed the document. Because recall that all I really need is a hook, a diff-match-patch library, and a place to store the deltas, and that would be enough.</p>
+        <p>I started by trying to build an actual <a href="https://developers.google.com/apps-script/quickstart/docs" target="_blank">plugin</a> for Docs. I played with their sample code, and I looked through the documentation. I was trying to see if there was a hook I could get that would tell me when a user changed the document. Recall that all I really need is that one hook, a diff-match-patch library, and a place to store the deltas.</p>
 
         <pre>   &#8220;The onEdit trigger runs automatically when a user changes the value of
     any cell in a *spreadsheet*&#8221;</pre>
