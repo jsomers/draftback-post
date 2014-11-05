@@ -244,19 +244,17 @@
 
         <div id='rg_embed_link_566032' class='rg_embed_link'>Read <a href="http://tech.genius.com/James-somers-basic-renderer-annotated">“Basic Renderer” by James Somers</a> on Genius</div><script src='//tech.genius.com/songs/566032/embed.js?u=150586'></script>
         
-        <p>The renderer is also pretty simple. (For bigger documents, for now, I don&#8217;t render styles, because it&#8217;s a lot of extra work for not that much better of a user experience.) It works like this:</p>
+        <p>The renderer is also pretty simple. (For bigger documents, for now, I don&#8217;t render styles, because it&#8217;s a lot of extra work for not that much better of a user experience.) It works like this. We have two levels: paragraphs and spans. To figure out what to wrap in styles, we look at each character and say &#8220;what are your calculated styles?&#8221; based on its hash of properties. Then we say &#8220;are those styles equal to the styles of the character before you?&#8221; If they are, we continue the span. If not, we create a new span.</p>
 
         <div id='rg_embed_link_566037' class='rg_embed_link'>Read <a href="http://tech.genius.com/James-somers-basic-renderer-code-annotated">“Basic Renderer Code” by James Somers</a> on Genius</div><script src='//tech.genius.com/songs/566037/embed.js?u=150586'></script>
-        
-        <p>We have two levels: paragraphs and spans. To figure out what to wrap in styles, we look at each character and say &#8220;what are your calculated styles?&#8221; based on your hash of properties. Then we say &#8220;are those styles equal to the styles of the character before you?&#8221; If they are, we continue the span. If not, we create a new span.</p>
 
         <p>And that&#8217;s essentially all you need to make something like Draftback.</p>
 
-        <p><em>Except</em>, of course, the big key, which is that wouldn&#8217;t it be nice if you didn&#8217;t have to install a Chrome extension to capture these &#8220;/save&#8221; requests?</p>
+        <p><em>Except</em>, of course, the big key, which is that wouldn&#8217;t it be nice if you didn&#8217;t have to install a Chrome extension to capture these <code>/save</code> requests?</p>
 
         <p>I was talking to my <a href="http://genius.com/lemon" target="_blank">boss</a> at <a href="http://genius.com" target="_blank">Genius</a> about this, and he suggested I look at the standard &#8220;Revision History&#8221; menu in Docs &#8212; maybe they had all the diffs somewhere in there?</p>
 
-        <p>I thought he must be wrong, since I remembered that Google only ever rendered a fairly coarse set of changes: maybe dozens or at most a hundred revisions for a document that had probably been changed 10 or 100 times more than that. But I indulged the idea, and started poking around the Network tab while poking through the Revision History menu. It&#8217;s then that I chanced upon the <code>/load</code> call. It has a URL that looks like this:</p>
+        <p>I thought he must be wrong, since I remembered that Google only ever rendered a fairly coarse set of changes: maybe dozens or at most a hundred revisions for a document that had probably been changed tens of thousands of times. But I indulged him, and kept my Network tab open while poking through the Revision History menu. It&#8217;s then that I chanced upon the <code>/load</code> call. It has a URL that looks like this:</p>
 
         <p><code>https://docs.google.com/document/d/#{docid}/revisions/load?id=#{docid}&amp;start=1330&amp;end=1341</code></p>
 
@@ -274,7 +272,7 @@
 
         <iframe src="//player.vimeo.com/video/9848524" width="100%" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p class="caption"><a href="http://vimeo.com/9848524">Hack the planet</a> from <a href="http://vimeo.com/user2056851" target="_blank">James Somers</a> on <a href="https://vimeo.com" target="_blank">Vimeo</a>.</p>
 
-        <p>There are a couple of complications &#8212; one is that you can&#8217;t just say &#8220;load me revisions 1 to infinity&#8221; (or -1): you have to specify the actual upper bound. My first cut at this was to do a <a href="http://rosettacode.org/wiki/Binary_search#Ruby">binary search</a> &#8212; if you get a <code>500</code> response, you know you&#8217;ve gone too high, so reduce your upper bound; if you get a <code>200</code>, you&#8217;re in range, so increase your lower bound; stop until lower > upper.</p>
+        <p>There are a couple of complications &#8212; one is that you can&#8217;t just say &#8220;load me revisions 1 to infinity&#8221; (or -1): you have to specify the actual upper bound. My first cut at this was to do a <a href="http://rosettacode.org/wiki/Binary_search#Ruby">binary search</a> &#8212; if you get a <code>500</code> response, you know you&#8217;ve gone too high, so you reduce your upper bound; if you get a <code>200</code>, you&#8217;re in range, so you increase your lower bound; stop until lower > upper.</p>
 
         <p>And, of course, there&#8217;s the matter of building a renderer that works at scale, including for documents that have many tens of thousands of revisions, where each revision is hundreds of pages long. (For that, the main trick is in calculating a &#8220;window&#8221; around the locus of each revision, and only doing your heavy-duty rendering within that window.) And making a UI that people want to use. And finding a way to hit these undocumented APIs on the behalf of other Google users without having them give you their credentials.</p>
 
@@ -282,7 +280,7 @@
 
         <p>It&#8217;s worth noting for a second that Google probably wasn&#8217;t thinking of playback when they built this system for storing documents as a series of minute changes. They probably did it for the same reason that Etherpad did it, which is to power real-time collaboration. The only way you can do that quickly and reliably is by shooting small changes back and forth across the network; if two changes differ, you can just reject one of them, thereby ensuring that everyone has the same version of the document. This is a technique called <a href="http://en.wikipedia.org/wiki/Operational_transformation" target="_blank">operational transformation</a>, and it&#8217;s a whole science unto itself.</p>
 
-        <p>So it&#8217;s not likely that Google is going to change the way they save documents just because it enables this playback stuff. The playback is an epiphenomenon of real-time collaboration, as it was with Etherpad. Etherpad made their playback demo at Paul Graham&#8217;s request; it was easy, since they were storing all this data anyway &#8212; because they had to. In fact, I think it&#8217;s possible that the very same engineers who built Etherpad found their way to the Docs team. (When they were acquired, they started at Wave, but then, of course, Wave was discontinued.)</p>
+        <p>So it&#8217;s not likely that Google is going to change the way they save documents just because it enables this playback stuff. The playback is an epiphenomenon of real-time collaboration, as it was with Etherpad. Etherpad made their playback demo at Paul Graham&#8217;s request; it was a hack on top of data they were already storing for other purposes. In fact, I think it&#8217;s possible that the very same engineers who built Etherpad found their way to the Docs team. (When they were acquired, they started at Wave, but then, of course, Wave was discontinued.)</p>
 
         <h3>A few notes about Draftback</h3>
 
@@ -373,7 +371,7 @@
 
           <p>All errors, omissions, and lapses in judgement in the above are my own. The following people might not have known exactly how they were helping me or what with; they were just being their generous selves.</p>
 
-          <p>I&#8217;d like to thank Jim for talking through diffs and nodes with me at length, and for explaining exactly the approach that it turned out Google uses, long before I discovered it. And Tom, for looking at what I thought was a pretty good demo and saying &#8220;well wouldn&#8217;t it be better if you could do this for <em>existing</em> documents,&#8221; and then coming up with a <a href="http://meta.genius.com/4127111">practical suggestion</a> for where to look. And finally to John, for letting me battle-test my code against his enormous, beautifully written book chapter.</p>
+          <p>I&#8217;d like to thank Jim for talking through diffs and nodes with me at length, and for explaining exactly the approach that it turned out Google uses, long before I discovered it. And Tom, for looking at what I thought was a pretty good demo and saying &#8220;well wouldn&#8217;t it be better if you could do this for <em>existing</em> documents,&#8221; and then coming up with a <a href="http://meta.genius.com/4127111">practical suggestion</a> for where to look. And finally to John, for letting me battle-test my code against his beautifully written book chapter.</p>
           
           <h3>Share this article</h3>
           
