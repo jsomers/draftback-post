@@ -31,7 +31,7 @@
     </div>
     
     <div id="container">
-      <div class="time">November 4th, 2014</div>
+      <div class="time">November 5th, 2014</div>
       
       <div id="post">
         <p>If you&#8217;ve ever typed anything into a Google Doc, you can now play it back as if it were a movie &#8212; like traveling through time to look over your own shoulder as you write.</p>
@@ -97,7 +97,7 @@
 
         <p>But what if you could actually <em>see</em> these guys at work? Isn&#8217;t it a shame you can&#8217;t?</p>
 
-        <p>I think it is. Most people aren&#8217;t as good writers as they should be. One thing is that they just <a href="http://jsomers.net/blog/more-people-should-write">don&#8217;t write enough</a>. Another is that they don&#8217;t realize it&#8217;s <a href="http://www.theatlantic.com/technology/archive/2011/07/composition-101-how-email-can-change-the-way-professors-teach/242468/">supposed to be hard</a>; they think that good writers are talented, when the truth is that good writers get good the way good programmers get good, the way good anythings get good: by enduring pain. And I think they&#8217;d understand that better if they had vivid evidence that a very good writer actually spends most of his time fighting himself.</p>
+        <p>I think it is. Most people aren&#8217;t as good writers as they should be. One thing is that they just <a href="http://jsomers.net/blog/more-people-should-write">don&#8217;t write enough</a>. Another is that they don&#8217;t realize it&#8217;s <a href="http://www.theatlantic.com/technology/archive/2011/07/composition-101-how-email-can-change-the-way-professors-teach/242468/">supposed to be hard</a>; they think that good writers are talented, when the truth is that good writers get good the way good programmers get good, the way good anythings get good: by <a href="http://meta.genius.com/4126882/Genius-the-genius-isms/Run-into-the-spike">running into the spike</a>. And I think they&#8217;d understand that better if they had vivid evidence that a very good writer actually spends most of his time fighting himself.</p>
 
         <p>That&#8217;s why I built Draftback. I had this idea I just couldn&#8217;t shake: I&#8217;d get someone whose writing is accessible, concise, uncontroversial, well-styled, and, above all, quintessentially <em>writing:</em> i.e., someone who&#8217;s writing in a form where the writing is all there is, where the job isn&#8217;t to report but rather to put into words what we would think if only we had their critical equipment and verbal range&#8230; someone like A.O. Scott, who reviews movies for the New York Times and does such a good job of it that sometimes I&#8217;ll watch a movie just so I can read his review.</p>
 
@@ -151,7 +151,7 @@
         <h3>The § That Actually Finally Delivers What the Title Promised: An explanation of how to reverse-engineer Google Docs&#8217;s diff data structures and renderer, a system which was actually probably developed for real-time collaboration, a.k.a &#8220;Operational Transformation,&#8221;
  a.k.a. nothing to do with &#8220;the archaeology of writing&#8221;</h3>
 
-        <p>The slam dunk in my face was <a href="http://googledocs.blogspot.com/2010/05/whats-different-about-new-google-docs.html">this blog post by Google</a> in which they explained why they scrapped the <code>content-editable</code> approach for Docs and build a brand new rendering engine from scratch.</p>
+        <p>The slam dunk in my face was <a href="http://googledocs.blogspot.com/2010/05/whats-different-about-new-google-docs.html">this blog post by Google</a> in which they explained why they scrapped the <code>content-editable</code> approach for Docs and built a brand new rendering engine from scratch.</p>
 
         <p>When you&#8217;re using Google Docs, you&#8217;re not actually typing into where you think you&#8217;re typing. You&#8217;re typing into a textarea in an iFrame off-screen, and through the postMessage API, those events are being sent to the &#8220;edit surface&#8221; that you see, which does stuff like draw your cursor. (Your cursor on Docs isn&#8217;t actually a cursor, it&#8217;s a 2px-wide <code>div</code>!)</p>
 
@@ -188,7 +188,7 @@
 
         <div id='rg_embed_link_566012' class='rg_embed_link'>Read <a href="http://tech.genius.com/James-somers-obfuscated-kix-renderer-code-annotated">“Obfuscated Kix renderer code” by James Somers</a> on Genius</div><script src='//tech.genius.com/songs/566012/embed.js?u=150586'></script>
 
-        <p>I tried to do this by throwing breakpoints all over the place. I&#8217;d search for phrases in the code that weren&#8217;t obfuscaed, like <code>innerHTML</code>, and throw a breakpoint beside them. Then I&#8217;d do stuff in the UI, and see if I hit my breakpoint. Then I&#8217;d inspect the call stack and see what values were lying around. I found out stuff like if you type something like <code>P.j.zb.rx()</code> in the console, and run it, you&#8217;ll &#8220;redo&#8221; whatever your last action was. I spend days doing this. In fact, on one weekend I spent so much time staring at minified Docs Javascript that I literally developed an eye ulcer. </p>
+        <p>I tried to do this by throwing breakpoints all over the place. I&#8217;d search for phrases in the code that weren&#8217;t obfuscaed, like <code>innerHTML</code>, and throw a breakpoint beside them. Then I&#8217;d do stuff in the UI, and see if I hit my breakpoint. Then I&#8217;d inspect the call stack and see what values were lying around. I found out stuff like if you type something like <code>P.j.zb.rx()</code> in the console, and run it, you&#8217;ll &#8220;redo&#8221; whatever your last action was. I spent days doing this. In fact, on one weekend I spent so much time staring at minified Docs Javascript that I literally developed an eye ulcer. </p>
 
         <p>Have you ever heard the story of how while NASA spent years and tens of millions of dollars developing a pen that would write in space, underwater, and upside-down, the Russians just brought a pencil? It&#8217;s apparently not true (the space pen <em>was</em> much safer than a pencil, and Russians wanted one too) but it illustrates a point. Here&#8217;s the &#8220;Russians bring a pencil&#8221; solution to my rendering problem. Again, click the highlighted lines to see an annotation that explains what&#8217;s going on:</p>
 
@@ -265,7 +265,7 @@
 
         <iframe src="//player.vimeo.com/video/9848524" width="100%" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p class="caption"><a href="http://vimeo.com/9848524">Hack the planet</a> from <a href="http://vimeo.com/user2056851">James Somers</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-        <p>There are a couple of complications &#8212; one is that you can&#8217;t just say &#8220;load me revisions 1 to infinity&#8221; (or -1): you have to specify the actual upper bound. My first cut at this was to do a binary search &#8212; if you get a <code>500</code> response, you know you&#8217;ve gone too high, so reduce your upper bound; if you get a <code>200</code>, you&#8217;re in range, so increase your lower bound; stop until lower > upper.</p>
+        <p>There are a couple of complications &#8212; one is that you can&#8217;t just say &#8220;load me revisions 1 to infinity&#8221; (or -1): you have to specify the actual upper bound. My first cut at this was to do a <a href="http://rosettacode.org/wiki/Binary_search#Ruby">binary search</a> &#8212; if you get a <code>500</code> response, you know you&#8217;ve gone too high, so reduce your upper bound; if you get a <code>200</code>, you&#8217;re in range, so increase your lower bound; stop until lower > upper.</p>
 
         <p>And, of course, there&#8217;s the matter of building a renderer that works at scale, including for documents that have many tens of thousands of revisions, where each revision is hundreds of pages long. (For that, the main trick is in calculating a &#8220;window&#8221; around the locus of each revision, and only doing your heavy-duty rendering within that window.) And making a UI that people want to use. And finding a way to hit these undocumented APIs on the behalf of other Google users without having them give you their credentials.</p>
 
