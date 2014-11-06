@@ -134,9 +134,7 @@
         <blockquote>This is why if you were to do “version control” for writing, you would have to record everything. You would have to make it trivial for the writer to “branch” off from some articulation, fail, and fall back to what they had before. Their every half-overture would have to be saved—because every half-overture, like every “commit,” might have words they would want to get back to. <p>— <a href="http://jsomers.net/blog/jimbopad" target="_blank">jsomers.net/blog/jimbopad</a></p>
         </blockquote>
 
-        <p>As soon as I made Jimbopad, which was the simplest this program could possibly be, I wanted something better. That&#8217;s when I set out to build Draftback 1.0. Here&#8217;s what it looked like:</p>
-
-        <p><a href="http://jimbopad.herokuapp.com/drafts/1/underlining/playback" target="_blank">http://jimbopad.herokuapp.com/drafts/1/underlining/playback</a></p>
+        <p>As soon as I made Jimbopad, which was the simplest this program could possibly be, I wanted something better. That&#8217;s when I set out to build Draftback 1.0. You can see what it looked like <a href="http://jimbopad.herokuapp.com/drafts/1/underlining/playback" target="_blank">here</a>.</p>
 
         <p>As far as I can tell this was the state of the art in writing playback. You&#8217;ve got your slider, of course. But you&#8217;ve also got these nifty green and red colors that show you exactly what changed in each revision. You&#8217;re automatically scrolled to the part of the document that changed (HUGE innovation). And you could drop in to &#8220;actual-speed&#8221; playback mode, which somehow I thought was far more intimate, and interesting, than watching a ceaseless robotic clack. (It had a feature where if the delay between revisions was long enough, a thing would come up and say &#8220;the writer stared into space for 30 minutes.&#8221;) You could even search phrases and filter to just the revisions including that phrase.</p>
 
@@ -170,10 +168,7 @@
 
         <p>I started by trying to build an actual <a href="https://developers.google.com/apps-script/quickstart/docs" target="_blank">plugin</a> for Docs. I played with their sample code, and I looked through the documentation. I was trying to see if there was a hook I could get that would tell me when a user changed the document. Recall that all I really need is that one hook, a diff-match-patch library, and a place to store the deltas.</p>
 
-        <pre>   &#8220;The onEdit trigger runs automatically when a user changes the value of
-    any cell in a *spreadsheet*&#8221;</pre>
-
-        <p>It turns out that they don&#8217;t expose this kind of event for their docs. And that&#8217;s when things started getting pretty interesting.</p>
+        <p>It turns out that they don&#8217;t expose this kind of event for their docs. (<a href="https://developers.google.com/apps-script/guides/triggers/" target="_blank">&#8220;The onEdit trigger runs automatically when a user changes the value of any cell in a... <em>spreadsheet</em>.&#8221;</a>) But that&#8217;s when things started getting pretty interesting.</p>
 
         <p>I decide I&#8217;m just going to write a Chrome extension on top of Google Docs, and I&#8217;m gonna capture the rendered HTML every time I make a change. Sure, the user has to install a Chrome extension, but that&#8217;s pretty simple, and when they&#8217;re using Docs they&#8217;ll hardly notice that my extension is there. It&#8217;ll feel like a seamless transparent experience.</p>
         
