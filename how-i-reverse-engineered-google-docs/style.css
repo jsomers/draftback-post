@@ -59,10 +59,6 @@
     font: 400 11px/18px "merriweather" !important;
   }
   
-  #container {
-    overflow-x: hidden;
-  }
-  
   img {
     max-width: 100% !important;
   }
