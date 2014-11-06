@@ -59,6 +59,10 @@
     font: 400 11px/18px "merriweather" !important;
   }
   
+  #container {
+    overflow-x: hidden;
+  }
+  
   img {
     max-width: 100% !important;
   }
@@ -175,7 +179,7 @@ iframe {
 
 img.big-screenshot {
   position: relative;
-  left: -380px;
+  left: -180px;
   margin: 0 auto;
   margin-bottom: -40px;
 }
