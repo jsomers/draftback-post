@@ -162,7 +162,7 @@
         <h3>The § That Actually Finally Delivers What the Title Promised: An explanation of how to reverse-engineer Google Docs&#8217;s diff data structures and renderer, a system which was actually probably developed for real-time collaboration, a.k.a &#8220;Operational Transformation,&#8221;
  a.k.a. nothing to do with &#8220;the archaeology of writing&#8221;</h3>
 
-        <p>The slam dunk in my face was <a href="http://googledocs.blogspot.com/2010/05/whats-different-about-new-google-docs.html" target="_blank">this blog post by Google</a> in which they explained why they scrapped the <code>contentEditable</code> approach for Docs, and in its stead built a brand new rendering engine from scratch.</p>
+        <p>The slam dunk in my face was <a href="http://googledrive.blogspot.fr/2010/05/whats-different-about-new-google-docs.html" target="_blank">this blog post by Google</a> in which they explained why they scrapped the <code>contentEditable</code> approach for Docs, and in its stead built a brand new rendering engine from scratch.</p>
 
         <p>When you&#8217;re using Google Docs, you&#8217;re not actually typing into where you think you&#8217;re typing. You&#8217;re typing into a textarea in an iFrame off-screen, and through the postMessage API, those events are being sent to the &#8220;edit surface&#8221; that you see, which does stuff like draw your cursor. (Your cursor on Docs isn&#8217;t actually a cursor, it&#8217;s a 2px-wide <code>div</code>!)</p>
 
