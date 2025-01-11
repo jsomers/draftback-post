@@ -293,8 +293,8 @@
           <p itemscope itemtype="http://data-vocabulary.org/Person">
             <span itemprop="name">James Somers</span> is a <span itemprop="title">writer and programmer</span> based in <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
               <span itemprop="locality">New York</span>, 
-              <span itemprop="region">NY</span>. He works on the engineering team at <a href="http://genius.com" itemprop="url" target="_blank">Genius.com</a>.
-            </span> Follow <a href="http://twitter.com/jsomers" target="_blank">@jsomers</a> for updates. Or <span id="contactme">contact me directly at <script type="text/javascript">
+              <span itemprop="region">NY</span>. At the time this post was written, he worked on the engineering team at <a href="http://genius.com" itemprop="url" target="_blank">Genius.com</a>.
+            </span> <span id="contactme">Contact me directly at <script type="text/javascript">
           //<![CDATA[
           <!--
           var x="function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
@@ -323,47 +323,8 @@
           //]]>
           </script></span></p>
           
-          <p>If you&#8217;d like to read more, check out <a href="http://jsomers.net/blog">jsomers.net/blog</a> or the list on my <a href="http://jsomers.net">homepage</a>. You can also subscribe for email updates below:</p>
-          
-          <script type="text/javascript">
-          $(document).ready(function() {
-            $("#email-signup-form").submit(function() {
-              var emailval = $('input#email').val();
-
-          if ($.trim(emailval) !== "") {
-            $("input[name='subscribe']").replaceWith("<img src='/ajax-loader.gif'/>")
-            $.ajax({
-              url: 'http://jsomers.net/email_signup.php', // your url; on jsfiddle /echo/json/
-              type: 'POST', // request method
-              data: {
-                email: emailval,
-                b_1c70e701f700d17d3a360885e_642d8f1db8: $('input[name="b_1c70e701f700d17d3a360885e_642d8f1db8"]').val()
-              },
-              success: function(data) {
-                $("#email_signup").replaceWith('<h4 style="margin-top: 20px; color: green;">' + data + '</h4>');
-              }
-            });
-          } else {
-              alert("Insert a email!");
-          }
-            return false;
-            });
-          });
-          </script>
-          
-          <div id="email_signup">
-            <form action="http://jsomers.net/email_signup.php" method="post" id="email-signup-form" name="email-signup-form" class="validate" target="_blank" novalidate style="padding-left: 0px; padding-bottom: 0px;">
-              <input type="email" value="" name="email" class="email" id="email" placeholder="Enter your email address for updates" style="border: 2px solid #eee; padding: 5px; display: inline; margin-right: 0px; font-size: 13px; width: 250px;" required>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;"><input type="text" name="b_1c70e701f700d17d3a360885e_642d8f1db8" value=""></div>
-              <input type="submit" value="Sign up" name="subscribe" class="button" style="display: inline">
-            </form>
-          </div>
-          
-          <div id="mobile_email_signup">
-            <a href="mailto:%6A%73%6F%6D%65%72%73@%67%6D%61%69%6C.%63%6f%6d?body=Hit%20send%20to%20get%20updates%20on%20my%20writing.&amp;subject=[jsomers.net%20mail%20subscription]%20I%27m%20in%21">Get my writing by email</a>
-          </div>
-          
+          <p>If you&#8217;d like to read more, check out <a href="http://jsomers.net">jsomers.net</a>. You can also subscribe for email updates on that page.</p>
+        
           <h3>Acknowledgements</h3>
 
           <p>All errors, omissions, and lapses in judgement in the above are my own. The following people might not have known exactly how they were helping me or what with; they were just being their generous selves.</p>
